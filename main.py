@@ -66,7 +66,7 @@ def cariDHPTan(A, memenuhiBatasan):
 
 # CONTOH INPUT
 
-def batasan(x):
-  return 0 <= x <= 360
+# def batasan(x):
+#   return 0 <= x <= 360
 
-print(cariDHPCos(63, batasan))
+# print(cariDHPCos(63, batasan))
