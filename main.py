@@ -13,7 +13,7 @@ def cariDHP(A, formula, memenuhiBatasan):
 
     if memenuhiBatasan(x):
       DHP.append(x)
-      adaDariNaik = True
+      xTerpenuhi = True
       sudahPernahMenemukan = True
 
     if memenuhiBatasan(y):
@@ -21,7 +21,7 @@ def cariDHP(A, formula, memenuhiBatasan):
       yTerpenuhi = True
       sudahPernahMenemukan = True
 
-    if sudahPernahMenemukan and adaDariNaik == False and yTerpenuhi == False:
+    if sudahPernahMenemukan and xTerpenuhi == False and yTerpenuhi == False:
       break
     else:
       k += 1
@@ -63,10 +63,10 @@ def cariDHPTan(A, memenuhiBatasan):
 
 # INPUT
 
-def batasan(x):
-  return -10000 <= x <= 10000
+# def batasan(x):
+#   return -10000 <= x <= 10000
 
-print(cariDHPCos(63, batasan))
+# print(cariDHPCos(63, batasan))
 
     
     
