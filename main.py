@@ -1,6 +1,9 @@
 def cariDHP(A, formula, memenuhiBatasan):
   DHP = []
-  k = 0
+  k = 0 
+
+# [] = list (daftar)
+# k = 0 sebagai titik awal, nantinya bisa dijadikan positif maupun negatif
 
   sudahPernahMenemukan = False
 
@@ -21,7 +24,10 @@ def cariDHP(A, formula, memenuhiBatasan):
       yTerpenuhi = True
       sudahPernahMenemukan = True
 
-    if sudahPernahMenemukan and xTerpenuhi == False and yTerpenuhi == False:
+# Kalau sudah tidak di dalam DHP, break
+# == beda dengan =, = berarti assign kanan ke kiri, == berarti sama dengan 
+    
+  if sudahPernahMenemukan and xTerpenuhi == False and yTerpenuhi == False:
       break
     else:
       k += 1
@@ -61,12 +67,12 @@ def cariDHPTan(A, memenuhiBatasan):
 
   return payload
 
-# INPUT
+# CONTOH INPUT
 
 # def batasan(x):
-#   return -10000 <= x <= 10000
+#   return 0 <= x <= 360
 
-# print(cariDHPCos(63, batasan))
+# print(cariDHPCos(60, batasan))
 
     
     
