@@ -1,34 +1,31 @@
 def cariDHP(A, formula, memenuhiBatasan):
   DHP = []
-  absoluteK = 0
+  k = 0
 
-  Naik = True
-  sudahMenemukanDariNaik = False
+  sudahPernahMenemukan = False
 
-  Turun  = True
-  sudahMenemukanDariTurun = False
+  while True:
+    adaDariNaik = False
+    adaDariTurun = False
 
-  while Naik and Turun:
-    x = formula(A, absoluteK)
+    x = formula(A, k)
+    y = formula(A, -k)
 
-    if Naik:
-      if memenuhiBatasan(x):
-        DHP.append(x)
-        sudahMenemukanDariNaik = True
-      else:
-        if sudahMenemukanDariNaik:
-          Naik = False
+    if memenuhiBatasan(x):
+      DHP.append(x)
+      adaDariNaik = True
+      sudahPernahMenemukan = True
 
-    if Turun:
-      if memenuhiBatasan(x):
-        DHP.append(x)
-        sudahMenemukanDariTurun = True
-      else:
-        if sudahMenemukanDariTurun:
-          Turun = False
+    if memenuhiBatasan(y):
+      DHP.append(y)
+      adaDariTurun = True
+      sudahPernahMenemukan = True
 
-    absoluteK += 1
-
+    if sudahPernahMenemukan and adaDariNaik == False and adaDariTurun == False:
+      break
+    else:
+      k += 1
+  
   return list(dict.fromkeys(DHP))
 
 def cariDHPSin(A, memenuhiBatasan):
@@ -64,9 +61,12 @@ def cariDHPTan(A, memenuhiBatasan):
 
   return payload
 
-# CONTOH INPUT
+# INPUT
 
 # def batasan(x):
-#   return 0 <= x <= 360
+#   return -10000 <= x <= 10000
 
 # print(cariDHPCos(63, batasan))
+
+    
+    
